@@ -158,6 +158,9 @@ GEM
     docile (1.1.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (1.0.2)
+    dotenv-deployment (0.3.0)
+      dotenv (~> 1.0)
     dropzonejs-rails (0.7.1)
       rails (> 3.1)
     email_spec (1.6.0)
@@ -466,6 +469,8 @@ DEPENDENCIES
   database_cleaner
   delorean
   devise
+  dotenv
+  dotenv-deployment
   dropzonejs-rails
   email_spec
   factory_girl_rails

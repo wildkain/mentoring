@@ -5,6 +5,8 @@ gem 'rails', '~>4.2.0'
 
 # postgresql adapter
 gem 'pg'
+gem 'dotenv'
+gem 'dotenv-deployment', require: 'dotenv'
 
 # preprocessors
 gem 'sass-rails', '~> 5.0'

@@ -7,11 +7,11 @@ Rails.application.configure do
   config.cache_classes = false
 
   config.log_formatter = ::Logger::Formatter.new
-  LogStashLogger.configure do |config|
-    config.customize_event do |event|
-      event['app_name'] = 'nastavnik54_staging'
-    end
-  end
+  # LogStashLogger.configure do |config|
+  #   config.customize_event do |event|
+  #     event['app_name'] = 'nastavnik54_staging'
+  #   end
+  # end
 
 
   # Do not eager load code on boot.

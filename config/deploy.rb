@@ -2,10 +2,11 @@
 lock '3.4.0'
 
 set :application, 'mentoring'
-set :repo_url, 'https://github.com/KernelCorp/mentoring.git'
+set :repo_url, 'https://github.com/wildkain/mentoring.git'
 set :sidekiq_pid, File.join(shared_path, 'pids', 'sidekiq.pid')
 
 set :rvm_ruby_version, '2.3.3'
+set :rails_env, :production
 
 set :password, ask('Server password:', nil, echo: false)
 # Default branch is :master
@@ -27,7 +28,7 @@ set :password, ask('Server password:', nil, echo: false)
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', '.env')
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'pids', 'tmp/cache', 'vendor/bundle', 'public/system')
 
