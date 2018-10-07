@@ -4,7 +4,7 @@ pid          "#{deploy_to}/shared/tmp/pids/unicorn.pid"
 
 
 worker_processes 2 # Здесь тоже в зависимости от нагрузки, погодных условий и текущей фазы луны
-listen "#/tmp/sockets/unicorn.mentoring.sock", backlog: 64
+listen "#{deploy_to}/current/tmp/sockets/unicorn.mentoring.sock", backlog: 64
 stderr_path "log/unicorn.stderr.log"
 stdout_path "log/unicorn.stdout.log"
 
