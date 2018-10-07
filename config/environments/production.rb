@@ -4,16 +4,16 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.log_formatter = ::Logger::Formatter.new
-  LogStashLogger.configure do |config|
-    config.customize_event do |event|
-      event['app_name'] = 'nastavnik54_production'
-    end
-  end
-
-  config.logstash.host = 'localhost'
-  config.logstash.type = :udp
-  config.logstash.port = 5228
+  # config.log_formatter = ::Logger::Formatter.new
+  # LogStashLogger.configure do |config|
+  #   config.customize_event do |event|
+  #     event['app_name'] = 'mentoring_production'
+  #   end
+  # end
+  #
+  # config.logstash.host = 'localhost'
+  # config.logstash.type = :udp
+  # config.logstash.port = 5228
   config.lograge.enabled = true
   config.lograge.formatter = Lograge::Formatters::Logstash.new
 
