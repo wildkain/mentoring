@@ -42,12 +42,15 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'pids', 'tmp/cache', 'vend
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-after 'deploy:publishing', 'deploy:restart'
-after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
+  desc "Reatart application"
   task :restart do
-    invoke 'unicorn:restart'
+    on roles(:app), in: :sequence, wait: 5 do
+      #execute :touch, release_path.join('/tmp/restart.txt')
+      invoke 'unicorn:restart'
+    end
   end
 
+  after :publishing, :restart
 end
