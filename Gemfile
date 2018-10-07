@@ -22,7 +22,7 @@ gem 'jquery-datetimepicker-rails'
 gem 'dropzonejs-rails'
 gem 'bxslider-rails', '~> 4.2', '>= 4.2.5.1'
 gem 'therubyracer'
-
+gem 'redis-rails'
 # turbolinks
 gem 'turbolinks'
 
