@@ -1,17 +1,13 @@
-deploy_to  = '/var/www/mentoring'
+deploy_to  = '/home/deployer/mentoring'
 rails_root = "#{deploy_to}/current"
-pid_file   = "#{deploy_to}/shared/pids/unicorn.pid"
-socket_file= "#{deploy_to}/shared/sockets/unicorn.sock"
-log_file   = "#{rails_root}/log/unicorn.log"
-err_log    = "#{rails_root}/log/unicorn_error.log"
-old_pid    = pid_file + '.oldbin'
+pid               "#{deploy_to}/current/tmp/pids/unicorn.pid"
+old_pid = "#{server.config[:pid]}.oldbin"
 
 timeout 60
 worker_processes 2 # Здесь тоже в зависимости от нагрузки, погодных условий и текущей фазы луны
-listen socket_file, backlog: 64
-pid pid_file
-stderr_path err_log
-stdout_path log_file
+listen "#{deploy_to}/current/tmp/sockets/unicorn.mentoring.sock", backlog: 64
+stderr_path "log/unicorn.stderr.log"
+stdout_path "log/unicorn.stdout.log"
 
 preload_app true # Мастер процесс загружает приложение, перед тем, как плодить рабочие процессы.
 

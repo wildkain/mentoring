@@ -7,8 +7,12 @@ set :sidekiq_pid, File.join(shared_path, 'pids', 'sidekiq.pid')
 
 set :rvm_ruby_version, '2.3.3'
 set :rails_env, :production
-
-set :password, ask('Server password:', nil, echo: false)
+set :deploy_to, "/home/deployer/mentoring"
+# Default value for :format is :airbrussh.
+set :format, :airbrussh
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -37,9 +41,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'pids', 'tmp/cache', 'vend
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
-
-set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
 after 'deploy:publishing', 'deploy:restart'
 after "deploy:restart", "deploy:cleanup"
