@@ -34,7 +34,7 @@ set :format_options, command_output: true, log_file: "log/capistrano.log", color
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', '.env')
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'pids', 'tmp/cache', 'vendor/bundle', 'public/system')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'pids', 'tmp/cache', 'vendor/bundle', 'public/system', 'tmp/pids')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

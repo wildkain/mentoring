@@ -1,6 +1,6 @@
 deploy_to  = '/home/deployer/mentoring'
 rails_root = "#{deploy_to}/current"
-pid          "#{deploy_to}/current/tmp/pids/unicorn.pid"
+pid          "#{deploy_to}/shared/tmp/pids/unicorn.pid"
 
 
 worker_processes 2 # Здесь тоже в зависимости от нагрузки, погодных условий и текущей фазы луны
