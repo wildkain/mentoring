@@ -1,7 +1,7 @@
 deploy_to  = '/home/deployer/mentoring'
 rails_root = "#{deploy_to}/current"
 pid               "#{deploy_to}/current/tmp/pids/unicorn.pid"
-old_pid = "#{server.config[:pid]}.oldbin"
+
 
 timeout 60
 worker_processes 2 # Здесь тоже в зависимости от нагрузки, погодных условий и текущей фазы луны
@@ -21,6 +21,7 @@ before_fork do |server, worker|
   defined?(ActiveRecord::Base) and
       ActiveRecord::Base.connection.disconnect!
   # Ниже идет магия, связанная с 0 downtime deploy.
+  old_pid = "#{server.config[:pid]}.oldbin"
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill('QUIT', File.read(old_pid).to_i)
