@@ -80,6 +80,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'nastavnik52.ru' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
+      tls: true,
       address:              'smtp.mail.ru',
       port:                  465,
       domain:               'mail.ru',
