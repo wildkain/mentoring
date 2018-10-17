@@ -84,7 +84,7 @@ Rails.application.configure do
       port:                  465,
       domain:               'mail.ru',
       user_name:            'zhizn_bez_granits@mail.ru',
-      password:             "#{ENV['MAIL_PASSWORD']}",
+      password:             ENV['MAIL_PASSWORD'],
       authentication:       :plain,
       enable_starttls_auto: true
   }
