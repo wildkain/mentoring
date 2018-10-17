@@ -77,14 +77,14 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { host: 'nastavnik54.ru' }
+  config.action_mailer.default_url_options = { host: 'nastavnik52.ru' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address:              'smtp.yandex.ru',
-      port:                  587,
-      domain:               'yandex.ru',
-      user_name:            'notify@nastavnik54.ru',
-      password:             'EZsZ-XUAlC-6TJqFk0mimg',
+      address:              'smtp.mail.ru',
+      port:                  465,
+      domain:               'mail.ru',
+      user_name:            'zhizn_bez_granits@mail.ru',
+      password:             "#{ENV['MAIL_PASSWORD']}",
       authentication:       :plain,
       enable_starttls_auto: true
   }
