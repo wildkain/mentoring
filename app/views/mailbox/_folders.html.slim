@@ -2,7 +2,7 @@
   = active_link_to mailbox_inbox_path, class: 'item' do
     | Входящие
     - if unread_mails_count > 0
-      .ui.green.pointing.left.label
+      .ui.blue.pointing.left.label
         = unread_mails_count
     - else
       i.icon.inbox
