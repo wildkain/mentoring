@@ -23,18 +23,19 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { host: 'nastavnik52.ru' }
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = { host: 'zhizn_bez_granits@mail.ru' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address:              'smtp.mail.ru',
-      port:                  465,
-      domain:               'mail.ru',
-      user_name:            'zhizn_bez_granits@mail.ru',
-      password:             ENV['MAIL_PASSWORD'],
-      authentication:       :plain,
-      enable_starttls_auto: true
+      :user_name => 'zhizn_bez_granits@mail.ru',
+      :password => ENV['MAIL_PASSWORD'],
+      :domain => 'zhizn_bez_granits@mail.ru',
+      :address => 'smtp.mail.ru',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
   }
 
   # Print deprecation notices to the Rails logger.

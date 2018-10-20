@@ -75,15 +75,15 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.default_url_options = { host: 'nastavnik52.ru' }
+  config.action_mailer.default_url_options = { host: 'zhizn_bez_granits@mail.ru' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => 'wildkain2',
-      :password => 'gfhr3nbhlf',
-      :domain => 'nastavnik52.ru',
-      :address => 'smtp.sendgrid.net',
+      :user_name => 'zhizn_bez_granits@mail.ru',
+      :password => ENV['MAIL_PASSWORD'],
+      :domain => 'zhizn_bez_granits@mail.ru',
+      :address => 'smtp.mail.ru',
       :port => 587,
       :authentication => :plain,
       :enable_starttls_auto => true
