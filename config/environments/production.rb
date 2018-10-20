@@ -80,14 +80,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'nastavnik52.ru' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      tls: true,
-      address:              'smtp.mail.ru',
-      port:                  465,
-      domain:               'mail.ru',
-      user_name:            'zhizn_bez_granits@mail.ru',
-      password:             ENV['MAIL_PASSWORD'],
-      authentication:       :plain,
-      enable_starttls_auto: true
+      :user_name => 'wildkain2',
+      :password => 'gfhr3nbhlf',
+      :domain => 'nastavnik52.ru',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
