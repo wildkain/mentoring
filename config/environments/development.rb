@@ -31,7 +31,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       :user_name => 'zhizn_bez_granits@mail.ru',
       :password => ENV['MAIL_PASSWORD'],
-      :domain => 'zhizn_bez_granits@mail.ru',
+      :domain => 'mail.ru',
       :address => 'smtp.mail.ru',
       :port => 587,
       :authentication => :plain,
