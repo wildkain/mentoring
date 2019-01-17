@@ -183,13 +183,13 @@
         = f.label :program_reason, 'Почему вы хотите стать наставником (волонтером/партнёром)? '
         = f.text_area :program_reason
       .field.required class=('error' if @candidate.errors.messages[:person_character])
-        = f.label :person_character, 'Какие качества вашего характера, особенные знания, навыки и т.д., могут , по вашему мнению, помочь становлению и развитию ребёнка-сироты?'
+        = f.label :person_character, 'Какие качества вашего характера, особенные знания, навыки и т.д., могут , по вашему мнению, помочь становлению и развитию ребёнка?'
         = f.text_area :person_character
       .field.required class=('error' if @candidate.errors.messages[:person_information])
         = f.label :person_information, 'Как бы вы описали (охарактеризовали) сами себя?'
         = f.text_area :person_information
       .field.required class=('error' if @candidate.errors.messages[:help_reason])
-        = f.label :help_reason, 'Почему вы хотите помогать ребёнку-сироте?'
+        = f.label :help_reason, 'Почему вы хотите помогать ребёнку?'
         = f.text_area :help_reason
       .field
         label
@@ -263,7 +263,7 @@
             = f.label :photo_rights_false, 'Нет'
             = f.radio_button :photo_rights, false
       .field.required class=('error' if @candidate.errors.messages[:info_about_program])
-        = f.label :info_about_program, 'Откуда вы получили информацию о Программе Наставничества и необходимости помощи детям – сиротам?'
+        = f.label :info_about_program, 'Откуда вы получили информацию о Программе Наставничества и необходимости помощи детям?'
         = f.text_field :info_about_program, list: 'info_sources'
         datalist#info_sources
           option value='СМИ'
@@ -278,7 +278,7 @@
           .ui.checkbox.check_box
             = check_box_tag 'agreement', 1, false, id: 'agreement'
             label for='agreement'
-              | Я понимаю цели Программы Наставничества и обязуюсь следовать разработанным индивидуальным планам, предложенным мне координатором (с учётом оценки потребностей детей-сирот), а также соблюдать конфиденциальность по любой личной информации о ребёнке, которая может стать мне известной.
+              | Я понимаю цели Программы Наставничества и обязуюсь следовать разработанным индивидуальным планам, предложенным мне координатором (с учётом оценки потребностей детей), а также соблюдать конфиденциальность по любой личной информации о ребёнке, которая может стать мне известной.
         ul.ui.list
           li.list.item
             | я обязуюсь сообщать координатору Программы об изменениях в моём графике (при невозможности присутствовать на запланированных ранее мероприятиях), или состоянии моего здоровья.
