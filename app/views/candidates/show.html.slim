@@ -275,6 +275,11 @@ p#alert = flash[:error]
             = @candidate.program_role
         .row
           .column
+            strong Вы хотите стать наставником для:
+            br
+            = @candidate.prefered_child_type
+        .row
+          .column
             strong Почему вы хотите стать наставником (волонтером/партнёром)?
             br
             = @candidate.program_reason

@@ -179,6 +179,9 @@
       .field.required class=('error' if @candidate.errors.messages[:program_role])
         = f.label :program_role, 'Вы хотите участвовать в Программе Наставничества в качестве:'
         = f.collection_select(:program_role, Candidate::PROGRAM_ROLES, :to_s, :to_s, { prompt: 'Выбрать...' })
+      .field.required class=('error' if @candidate.errors.messages[:prefered_child_type])
+        = f.label :prefered_child_type, 'Вы хотите стать наставником для:'
+        = f.collection_select(:prefered_child_type, Candidate::CHILD_TYPES, :to_s, :to_s, {prompt: 'Выбрать...'})
       .field.required class=('error' if @candidate.errors.messages[:program_reason])
         = f.label :program_reason, 'Почему вы хотите стать наставником (волонтером/партнёром)? '
         = f.text_area :program_reason
