@@ -65,8 +65,8 @@ class Candidate < ActiveRecord::Base
   accepts_nested_attributes_for :candidate_children_experiences
 
   validates_presence_of :first_name, :last_name, :middle_name, :registration_address, :home_address, :phone_number,
-                        :email, :birth_date, :confession, :health_status, :serious_diseases, :organization_name, :work_contacts, :work_position, :work_functions, :work_schedule, :hobby,
-                        :martial_status, :program_role,
+                        :email, :birth_date,  :confession, :social_links, :health_status, :serious_diseases, :organization_name, :work_contacts, :work_position, :work_functions, :work_schedule, :hobby,
+                        :martial_status, :program_role, :prefered_child_type,
                         :program_reason, :person_character, :person_information, :help_reason, :child_age, :child_gender,
                         :child_character, :visit_frequency, :alcohol, :tobacco, :psychoactive, :drugs,
                         :child_crime, :disabled_parental_rights, :info_about_program
@@ -78,6 +78,7 @@ class Candidate < ActiveRecord::Base
   HEALTH_STATUSES = ['отлично', 'хорошо', 'средне', 'плохо']
   GENDERS = ['Мужской', 'Женский']
   CHILD_GENDERS = ['Мужской', 'Женский', 'Не имеет значения']
+  CHILD_TYPES = ['ребенка-сироты', 'для семейного ребенка', 'находящегося в сложной жизненной ситуации', 'не имеет значения']
   EDUCATION_TYPES = ['Общеобразовательная школа', 'Университет, Институт, техникум', 'Дополнительные курсы, тренинги, семинары']
   MARTIAL_STATUSES = ['Женат (замужем)', 'Гражданский брак', 'Разведён (разведена)', 'Вдовец (вдова)', 'Не женат (не замужем)']
   HOUSE_TYPES = ['Квартира', 'Частный дом', 'Арендованное жильё']

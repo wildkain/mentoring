@@ -55,10 +55,10 @@ class CandidatesController < ApplicationController
     def candidate_params
       params.require(:candidate)
             .permit(:last_name, :first_name, :middle_name, :registration_address, :home_address, :phone_number, :email,
-                    :birth_date, :russian_citizenship, :confession, :health_status, :serious_diseases, :work_start_date,
+                    :birth_date, :russian_citizenship, :confession, :social_links, :health_status, :serious_diseases, :work_start_date,
                     :work_end_date, :organization_name, :work_contacts, :work_position, :work_functions, :work_schedule,
                     :hobby, :martial_status, :house_type, :number_of_rooms, :peoples_for_room, :peoples, :pets,
-                    :program_role, :program_reason, :person_character, :person_information, :help_reason, :child_age,
+                    :program_role, :prefered_child_type, :program_reason, :person_character, :person_information, :help_reason, :child_age,
                     :child_gender, :child_character, :visit_frequency, :invalid_child, :alcohol, :tobacco,
                     :psychoactive, :drugs, :child_crime, :disabled_parental_rights, :reports, :photo_rights,
                     :info_about_program,

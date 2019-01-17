@@ -66,6 +66,11 @@
             .inline.field.radio.checkbox
               = f.label :russian_citizenship_false, 'Нет'
               = f.radio_button :russian_citizenship, false
+      .field
+        label
+          | Ссылки на ваши профили в социальных сетях
+        = f.text_field :social_links
+
     .ui.orange.segment
       h3.ui.header
         | 2. Состояние здоровья:
@@ -174,17 +179,20 @@
       .field.required class=('error' if @candidate.errors.messages[:program_role])
         = f.label :program_role, 'Вы хотите участвовать в Программе Наставничества в качестве:'
         = f.collection_select(:program_role, Candidate::PROGRAM_ROLES, :to_s, :to_s, { prompt: 'Выбрать...' })
+      .field.required class=('error' if @candidate.errors.messages[:prefered_child_type])
+        = f.label :prefered_child_type, 'Вы хотите стать наставником для:'
+        = f.collection_select(:prefered_child_type, Candidate::CHILD_TYPES, :to_s, :to_s, {prompt: 'Выбрать...'})
       .field.required class=('error' if @candidate.errors.messages[:program_reason])
         = f.label :program_reason, 'Почему вы хотите стать наставником (волонтером/партнёром)? '
         = f.text_area :program_reason
       .field.required class=('error' if @candidate.errors.messages[:person_character])
-        = f.label :person_character, 'Какие качества вашего характера, особенные знания, навыки и т.д., могут , по вашему мнению, помочь становлению и развитию ребёнка-сироты?'
+        = f.label :person_character, 'Какие качества вашего характера, особенные знания, навыки и т.д., могут , по вашему мнению, помочь становлению и развитию ребёнка?'
         = f.text_area :person_character
       .field.required class=('error' if @candidate.errors.messages[:person_information])
         = f.label :person_information, 'Как бы вы описали (охарактеризовали) сами себя?'
         = f.text_area :person_information
       .field.required class=('error' if @candidate.errors.messages[:help_reason])
-        = f.label :help_reason, 'Почему вы хотите помогать ребёнку-сироте?'
+        = f.label :help_reason, 'Почему вы хотите помогать ребёнку?'
         = f.text_area :help_reason
       .field
         label
@@ -200,7 +208,7 @@
         = f.label :child_character, 'Насколько важным для вас является характер ребёнка (внешний вид, поведенческие особенности)?'
         = f.text_area :child_character
       .field.required class=('error' if @candidate.errors.messages[:visit_frequency])
-        = f.label :visit_frequency, 'Как часто вы сможете навещать ребенка в учреждении?'
+        = f.label :visit_frequency, 'Как часто вы сможете навещать ребенка?'
         = f.text_field :visit_frequency, list: 'visit_frequency'
         datalist#visit_frequency
           option value='1 раз в неделю'
@@ -258,7 +266,7 @@
             = f.label :photo_rights_false, 'Нет'
             = f.radio_button :photo_rights, false
       .field.required class=('error' if @candidate.errors.messages[:info_about_program])
-        = f.label :info_about_program, 'Откуда вы получили информацию о Программе Наставничества и необходимости помощи детям – сиротам?'
+        = f.label :info_about_program, 'Откуда вы получили информацию о Программе Наставничества и необходимости помощи детям?'
         = f.text_field :info_about_program, list: 'info_sources'
         datalist#info_sources
           option value='СМИ'
@@ -273,7 +281,7 @@
           .ui.checkbox.check_box
             = check_box_tag 'agreement', 1, false, id: 'agreement'
             label for='agreement'
-              | Я понимаю цели Программы Наставничества и обязуюсь следовать разработанным индивидуальным планам, предложенным мне координатором (с учётом оценки потребностей детей-сирот), а также соблюдать конфиденциальность по любой личной информации о ребёнке, которая может стать мне известной.
+              | Я понимаю цели Программы Наставничества и обязуюсь следовать разработанным индивидуальным планам, предложенным мне координатором (с учётом оценки потребностей детей), а также соблюдать конфиденциальность по любой личной информации о ребёнке, которая может стать мне известной.
         ul.ui.list
           li.list.item
             | я обязуюсь сообщать координатору Программы об изменениях в моём графике (при невозможности присутствовать на запланированных ранее мероприятиях), или состоянии моего здоровья.
