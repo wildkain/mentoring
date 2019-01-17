@@ -208,7 +208,7 @@
         = f.label :child_character, 'Насколько важным для вас является характер ребёнка (внешний вид, поведенческие особенности)?'
         = f.text_area :child_character
       .field.required class=('error' if @candidate.errors.messages[:visit_frequency])
-        = f.label :visit_frequency, 'Как часто вы сможете навещать ребенка в учреждении?'
+        = f.label :visit_frequency, 'Как часто вы сможете навещать ребенка?'
         = f.text_field :visit_frequency, list: 'visit_frequency'
         datalist#visit_frequency
           option value='1 раз в неделю'
